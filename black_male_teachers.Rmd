@@ -1,0 +1,182 @@
+---
+title: "A Systematic Review of the Research Literature on Black Male Teachers"
+author: 
+  - "Jahmere Jackson"
+  - "Howard University"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true  # Enable floating TOC in the sidebar
+    number_sections: true
+    theme: cerulean
+    always_allow_html: true
+    self_contained: true
+editor_options:
+  chunk_output_type: console
+  markdown:
+    wrap: sentence
+---
+
+# Abstract
+
+We conduct a systematic review of the research literature on the retention of Black male educators in the United States. Our analysis uses computational methods to focus on the unique challenges Black male educators face and how a series of interconnected factors contribute to low retention rates in U.S. schools. Findings indicate that Black male educators often take on additional responsibilities beyond their standard teaching duties, such as being perceived primarily as disciplinarians and being expected to connect with "troubled" students due to a racialization process that reinforces deficit-based assumptions. Additional factors such as low wages, lack of representation, and feelings of being undervalued, significantly impact retention. This study seeks to establish a framework for understanding the state of the research literature on Black male educators and to identify strategies for improving retention, including mentorship, professional development opportunities, and supportive work environments.
+
+```{r setup, include=F}
+knitr::opts_chunk$set(
+  echo = TRUE, # By default, hide code; set to TRUE to see code
+  fig.pos = 'th', # Places figures at top or here
+  out.width = '100%', dpi = 300, # Figure resolution and size
+  fig.env="figure"
+) # Latex figure environment
+
+options(knitr.table.format = "latex") # For kable tables to write LaTeX table directly
+```
+
+# Libraries and packages
+
+```{r, message=F, warning=F}
+## set up, load libraries
+library(dplyr)
+library(readtext)
+library(tidyverse)
+library(here)
+library(gt)
+library(ggplot2)
+library(dplyr)
+library(knitr)
+library(readr)
+library(kableExtra)
+library(bibliometrix)
+library(tidyverse)
+library(DiagrammeR)
+library(DiagrammeRsvg)
+library(rsvg)
+library(quanteda)
+library(stringr)
+library(tidytext)
+library("quanteda.textmodels")
+library("quanteda.textstats")
+library("quanteda.textplots")
+require(quanteda.corpora)
+here::i_am("black_male_teachers.Rmd")
+```
+
+# INTRODUCTION 
+
+Beginning with a literature review, my research strives to find ways to retain Black men in the feild of education. Before finding this out, I found that it is important to find what are the struggles of Black men who stayed within the system as educators. There are many accounts of Black male educators expressing that there are extra pedagogical responsibilities place upon them, only adding to the difficulty of the already impossible job of teachers. These extra pedagogical responsibilites include but are not limited to, being placed as surrogate fathers for young Black boys, being seen as disciplinarians more than educators - assuming that all Black men are equipped with the tools / experiences to reach the "troubled" Black boy - all while being expected to complete the job of any other teacher in the school. Understanding the reasons why Black male teachers are struggling in the field will equip us with a solid base to find out why Black men are not retaining in the field of education. 
+
+# RESEARCH QUESTIONS
+
+1. How can we increase the retention rates of Black male educators?
+2. Why are current Black male educators compelled to stay in the field of education?
+
+# DISCUSSION 
+
+“The predominance of women authority figures in the lives of their Black students and the emotional and psychological resentment harbored by some Black students towards absent fathers” (E.Brockenbrough, 2011, P.8).
+
+"Theres a much closer connection with a father. You go to your father for a lot of things that you're not gonna come to me about. And if you do, I will stop you immediately and say 'do you need to go to the counsellor?" (E.Brockenbrough, 2011, P.8)
+
+"I think female teachers don't have it as difficult as male teachers because a lot of these children are accustomed to having female authority figures" (E.Brockenbrough, 2011, P.10).
+
+" Participants perceived that their peers and school administrators positioned them to serve primarily as disciplinarians first and teachers second" (T.Bristol, M.Mentor, 2018, P.1).
+
+"Moreover, Brown reminded us that the call for more Black men to enter the classroom is directly linked to policy discussions addressing the school-based performance of Black male students; these discourses generally assume that Black male teachers have disposi- tions and experiences that allow them to reach “troubled” Black boys" (T.Bristol, M.Mentor, 2018, P.4).
+
+" In particular, there is little written about how Black men’s ways of knowing contribute to the development of a knowledge base on cultural teaching in urban schools" (M.Lynn, 2006, P.1).
+
+"...it is also important to look closely at Black men’s peda- gogical practice, especially the practices of Black male teachers who express a commitment to using their classrooms as a tool to improve the social conditions of African Americans" (M.Lynn, 2006, P.1).
+
+# METHOD
+
+| Code | Criteria |
+|------------------|------------------------------------------------------|
+| IC1 | Article contains keywords in the title (TI) or abstract (AB) |
+| IC2 | Article published between 2015 and 2024 |
+| IC3 | Article originally written in English |
+| IC4 | Article is a journal article |
+| IC5 | Article purpose or core questions center on the topical subjects of analysis |
+
+: Inclusion and exclusion criteria for the study
+
+## Scoping
+
+TBD
+
+## Review
+
+Key Columns of Interest:
+
+-   AU: Authors of the publication
+
+-   AB: Abstract text
+
+-   TI: Title of the publication
+
+-   AU_CO: Countries of the authors
+
+-   SC: Subject categories (e.g., "Education & Educational Research")
+
+-   PY: Publication year
+
+-   TC: Total citations
+
+## Reduction
+
+TBD
+
+# ANALYTIC FRAMEWORK
+
+```{r, echo=F, include=T}
+# Create the framework
+tmp = DiagrammeR::grViz('digraph model {
+
+    graph [layout = dot, overlap = true]
+    
+    node [shape=box]
+    {"Scoping"} -> {"Review"} -> {"Reduction"};
+ 
+    node [shape=box]
+    {"Notions, patterns = TBD"} -> {"Sources = TDB"} -> docs;
+    
+    node [shape=box]
+    docs [label=<Documents, n = TBD>];
+    
+# `edge` statements
+ 
+    edge [minlen = 2]
+    docs -> {"Concepts" -> Themes}
+
+ }') 
+
+# Display the graph
+tmp
+
+# Export to SVG
+tmp_svg = DiagrammeRsvg::export_svg(tmp)
+
+# Convert SVG to raw vector
+tmp_raw = charToRaw(tmp_svg)
+
+```
+
+
+# DATA
+
+Loading the text file.
+
+```{r, message=F, warning=F}
+data <- readtext("savedrecs.txt") # Load the data
+M <- convert2df(file=data, dbsource= "wos", format= "plaintext")
+dim(M)
+
+# create an object of the study results
+results <- biblioAnalysis(M, sep = ";") # entire data set
+
+options(width=100)
+S <- summary(object = results, k = 10, pause = F)
+```
+
+```{r, message=F, warning=F}
+
+```
