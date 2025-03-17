@@ -71,22 +71,6 @@ here::i_am("black_male_teachers.Rmd")
 1. How can we increase the retention rates of Black male educators?
 2. Why are current Black male educators compelled to stay in the field of education?
 
-# DISCUSSION 
-
-“The predominance of women authority figures in the lives of their Black students and the emotional and psychological resentment harbored by some Black students towards absent fathers” (E.Brockenbrough, 2011, P.8).
-
-"Theres a much closer connection with a father. You go to your father for a lot of things that you're not gonna come to me about. And if you do, I will stop you immediately and say 'do you need to go to the counsellor?" (E.Brockenbrough, 2011, P.8)
-
-"I think female teachers don't have it as difficult as male teachers because a lot of these children are accustomed to having female authority figures" (E.Brockenbrough, 2011, P.10).
-
-" Participants perceived that their peers and school administrators positioned them to serve primarily as disciplinarians first and teachers second" (T.Bristol, M.Mentor, 2018, P.1).
-
-"Moreover, Brown reminded us that the call for more Black men to enter the classroom is directly linked to policy discussions addressing the school-based performance of Black male students; these discourses generally assume that Black male teachers have disposi- tions and experiences that allow them to reach “troubled” Black boys" (T.Bristol, M.Mentor, 2018, P.4).
-
-" In particular, there is little written about how Black men’s ways of knowing contribute to the development of a knowledge base on cultural teaching in urban schools" (M.Lynn, 2006, P.1).
-
-"...it is also important to look closely at Black men’s peda- gogical practice, especially the practices of Black male teachers who express a commitment to using their classrooms as a tool to improve the social conditions of African Americans" (M.Lynn, 2006, P.1).
-
 # METHOD
 
 | Code | Criteria |
@@ -124,6 +108,22 @@ Key Columns of Interest:
 ## Reduction
 
 TBD
+
+# DISCUSSION 
+
+“The predominance of women authority figures in the lives of their Black students and the emotional and psychological resentment harbored by some Black students towards absent fathers” (E.Brockenbrough, 2011, P.8).
+
+"Theres a much closer connection with a father. You go to your father for a lot of things that you're not gonna come to me about. And if you do, I will stop you immediately and say 'do you need to go to the counsellor?" (E.Brockenbrough, 2011, P.8)
+
+"I think female teachers don't have it as difficult as male teachers because a lot of these children are accustomed to having female authority figures" (E.Brockenbrough, 2011, P.10).
+
+" Participants perceived that their peers and school administrators positioned them to serve primarily as disciplinarians first and teachers second" (T.Bristol, M.Mentor, 2018, P.1).
+
+"Moreover, Brown reminded us that the call for more Black men to enter the classroom is directly linked to policy discussions addressing the school-based performance of Black male students; these discourses generally assume that Black male teachers have disposi- tions and experiences that allow them to reach “troubled” Black boys" (T.Bristol, M.Mentor, 2018, P.4).
+
+" In particular, there is little written about how Black men’s ways of knowing contribute to the development of a knowledge base on cultural teaching in urban schools" (M.Lynn, 2006, P.1).
+
+"...it is also important to look closely at Black men’s peda- gogical practice, especially the practices of Black male teachers who express a commitment to using their classrooms as a tool to improve the social conditions of African Americans" (M.Lynn, 2006, P.1).
 
 # ANALYTIC FRAMEWORK
 
