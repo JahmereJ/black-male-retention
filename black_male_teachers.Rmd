@@ -18,14 +18,6 @@ editor_options:
     wrap: sentence
 ---
 
-# Abstract
-
-We conduct a systematic review of the research literature on the retention of Black male educators in the United States. Our analysis uses computational methods to focus on the unique challenges Black male educators face and how a series of interconnected factors contribute to low retention rates in U.S. schools. Findings indicate that Black male educators often take on additional responsibilities beyond their standard teaching duties, such as being perceived primarily as disciplinarians and being expected to connect with "troubled" students due to a racialization process that reinforces deficit-based assumptions. Additional factors such as low wages, lack of representation, and feelings of being undervalued, significantly impact retention. This study seeks to establish a framework for understanding the state of the research literature on Black male educators and to identify strategies for improving retention, including mentorship, professional development opportunities, and supportive work environments.
-
-# Introduction 
-
-Beginning with a literature review, my research strives to find ways to retain Black men in the feild of education. Before finding this out, I found that it is important to find what are the struggles of Black men who stayed within the system as educators. There are many accounts of Black male educators expressing that there are extra pedagogical responsibilities place upon them, only adding to the difficulty of the already impossible job of teachers. These extra pedagogical responsibilites include but are not limited to, being placed as surrogate fathers for young Black boys, being seen as disciplinarians more than educators - assuming that all Black men are equipped with the tools / experiences to reach the "troubled" Black boy - all while being expected to complete the job of any other teacher in the school. Understanding the reasons why Black male teachers are struggling in the field will equip us with a solid base to find out why Black men are not retaining in the field of education. 
-
 ```{r setup, include=F}
 knitr::opts_chunk$set(
   echo = TRUE, # By default, hide code; set to TRUE to see code
@@ -66,10 +58,20 @@ require(quanteda.corpora)
 here::i_am("black_male_teachers.Rmd")
 ```
 
+# Abstract
+
+We conduct a systematic review of the research literature on the retention of Black male educators in the United States. Our analysis uses computational methods to focus on the unique challenges Black male educators face and how a series of interconnected factors contribute to low retention rates in U.S. schools. Findings indicate that Black male educators often take on additional responsibilities beyond their standard teaching duties, such as being perceived primarily as disciplinarians and being expected to connect with "troubled" students due to a racialization process that reinforces deficit-based assumptions. Additional factors such as low wages, lack of representation, and feelings of being undervalued, significantly impact retention. This study seeks to establish a framework for understanding the state of the research literature on Black male educators and to identify strategies for improving retention, including mentorship, professional development opportunities, and supportive work environments.
+
+# Introduction 
+
+Beginning with a literature review, my research strives to find ways to retain Black men in the feild of education. Before finding this out, I found that it is important to find what are the struggles of Black men who stayed within the system as educators. There are many accounts of Black male educators expressing that there are extra pedagogical responsibilities place upon them, only adding to the difficulty of the already impossible job of teachers. These extra pedagogical responsibilites include but are not limited to, being placed as surrogate fathers for young Black boys, being seen as disciplinarians more than educators - assuming that all Black men are equipped with the tools / experiences to reach the "troubled" Black boy - all while being expected to complete the job of any other teacher in the school. Understanding the reasons why Black male teachers are struggling in the field will equip us with a solid base to find out why Black men are not retaining in the field of education. 
+
 # RESEARCH QUESTIONS
 
-1. How can we increase the retention rates of Black male educators?
+1. What is the intellectual and conceptual structure of research on retaining Black male educators in K-12 settings?
 2. Why are current Black male educators compelled to stay in the field of education?
+
+**consider adding a note that relates to what the literature says, for example: How can/does this body of literature support a framework on Black male educator retention?
 
 # METHOD
 
@@ -137,7 +139,7 @@ tmp = DiagrammeR::grViz('digraph model {
     {"Scoping"} -> {"Review"} -> {"Reduction"};
  
     node [shape=box]
-    {"Notions, patterns = TBD"} -> {"Sources = TDB"} -> docs;
+    {"Keywords = TBD"} -> {"Sources = TDB"} -> docs;
     
     node [shape=box]
     docs [label=<Documents, n = TBD>];
@@ -167,16 +169,89 @@ Loading the text file.
 
 ```{r, message=F, warning=F}
 data <- readtext("savedrecs.txt") # Load the data
-M <- convert2df(file=data, dbsource= "wos", format= "plaintext")
-dim(M)
+D <- convert2df(file=data, dbsource= "wos", format= "plaintext")
+dim(D)
 
 # create an object of the study results
-results <- biblioAnalysis(M, sep = ";") # entire data set
+results <- biblioAnalysis(D, sep = ";") # entire data set
 
 options(width=100)
 S <- summary(object = results, k = 10, pause = F)
 ```
 
-```{r, message=F, warning=F}
-
+```{r, include=F, message=F, warning=F}
+# filter out the year to include only articles published 2010 - 2024
+D %>% 
+  filter(PY > 2009) %>% 
+  filter(PY < 2025) -> D_filter_year
+results_filter_by_year <- biblioAnalysis(D_filter_year, sep = ";") # filtered data
+S <- summary(object = results_filter_by_year, k = 10, pause = F)
 ```
+
+---
+
+# FINDINGS
+
+Gather main information about the data set.
+
+```{r}
+#| results: show
+#| warning: false
+
+S[2] # Main information
+```
+
+Publications by year
+
+```{r}
+#| results: show
+#| warning: false
+
+S[3] # Article count by year
+```
+
+Graph of the articles count by year
+
+```{r}
+#| results: show
+#| warning: false
+
+year_counts <- D_filter_year %>%
+  group_by(PY) %>%
+  summarise(count = n())
+
+# Pubs by year
+pubs_by_year <- ggplot(year_counts, aes(x = PY, y = count)) +
+  geom_col(fill = "steelblue") +
+  geom_text(aes(label = count), 
+            position = position_dodge(width = 0.9), 
+            vjust = -0.5, 
+            size = 3) +
+  geom_smooth(method = "loess", se = FALSE, color = "blue", size = 0.5, linetype = "dotted") +
+  theme_minimal() +
+  labs(x = "Year", y = "Number of Publications", 
+       title = "") +
+  scale_x_continuous(breaks = seq(min(year_counts$PY), max(year_counts$PY), by = 1)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+pubs_by_year
+```
+
+We noticed a lot of paper published in 2018, so we'll filter to observe those papers more closely.
+
+```{r}
+# filter by year to see why there was such an increase in 2018
+D %>% 
+  filter(PY == 2018) -> D_filter_2018
+View(D_filter_2018)
+```
+
+
+
+
+
+
+
+
+
+
