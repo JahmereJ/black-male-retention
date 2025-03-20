@@ -127,6 +127,10 @@ TBD
 
 "...it is also important to look closely at Black men’s peda- gogical practice, especially the practices of Black male teachers who express a commitment to using their classrooms as a tool to improve the social conditions of African Americans" (M.Lynn, 2006, P.1).
 
+## retention definition 
+
+
+
 # ANALYTIC FRAMEWORK
 
 ```{r, echo=F, include=T}
