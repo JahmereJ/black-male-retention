@@ -196,6 +196,9 @@ S <- summary(object = results_filter_by_year, k = 10, pause = F)
 
 # FINDINGS
 
+From the years of 2010 - 2024, the United States had the most articles regarding Black male educators' retention rates by a great margin, with 6193 total citations coming from the USA and 10 coming from Korea which is second. In these 14 years, 943 authors have written on Black male education. The most productive authors in my dataset has been Warren, Bristol, and Brooms. Of these articles, the keywords being Race, Black Males, and Urban Education. 
+We see a large boom in the number of publications from 2015 to 2016, and once again from 2017 to 2018. 2024 was the year with the most publications, with 48 articles on the topic of Black male education, showing that more scholars are becoming aware of the problem and actively searching for reasons/solutions on the subject. 
+
 Gather main information about the data set.
 
 ```{r}
