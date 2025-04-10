@@ -1,16 +1,14 @@
 ---
-title: "Examining Racial Disparities in U.S. Incarceration and Capital Punishment"
+title: "A Systematic Review of Factors Influencing Black Male Educator Retention"
 author: 
-  - name: Zoe Williams
+  - name: Jahmere Jackson
     affil: 1
   - name:  Nathan Alexander, PhD
-    affil: 2, 3
+    affil: 1, 2
 affiliation:
   - num: 1
-    address: Department of Political Science, College of Arts and Sciences
-  - num: 2
     address: Department of Curriculum and Instruction, School of Education
-  - num: 3
+  - num: 2
     address: Program in Applied Data Science and Analytics, The Graduate School
 column_numbers: 3
 logoright_name: img/qs-logo.png
@@ -55,9 +53,11 @@ pagedown::chrome_print("poster-template.Rmd")
 
 We investigate racial disparities in U.S. incarceration rates and capital punishment to highlight systemic inequities within the criminal justice system. Our hypotheses align with research literature and historical data, indicating that Black Americans are incarcerated at disproportionately higher rates than other groups; we take a particular focus on southern states. We also examine racial bias in the administration of the death penalty, specifically analyzing data on Black defendants. By utilizing multiple sources of state-level data, we aim to uncover how race influences patterns of incarceration and sentencing, emphasizing the need for reforms to address persistent inequities and promote fairness in the justice system.
 
-# Overview
+# Introduction
 
-This is some sample text.
+In today’s educational landscape, women significantly outnumber men, particularly in teaching positions. Among the most underrepresented groups in the field are Black men, who make up less than 2% of the educational workforce. This stark underrepresentation raises critical questions: Why are Black men increasingly hesitant to enter the teaching profession? What factors contribute to their premature departure from the classroom? And how can we better support and retain those who do choose to pursue a career in education?
+This qualitative study explores existing literature on the retention of Black male educators. The research reveals not only quantitative trends but also rich qualitative insights into the lived experiences of these men. Notably, studies highlight the disproportionate number of extra-pedagogical responsibilities placed on Black male teachers, often positioning them as disciplinarians or cultural role models beyond their teaching duties.
+By examining these patterns, this study aims to deepen the understanding of the current state of research on Black male educator retention and identify strategies to improve their recruitment, support, and longevity within the profession.
 
 # Literature Review
 
@@ -67,9 +67,9 @@ I am adding a citation @bohm2016deathquest.
 
 # Research Questions
 
-1.  This is research question 1.
+1. What is the intellectual and conceptual structure of research on retaining Black male educators in K-12 settings?
 
-2.  This is research question 2.
+2. Why are current Black male educators compelled to stay in the field of education?
 
 # Methodology
 
@@ -87,29 +87,13 @@ This is some more sample text.
 
 These are the findings.
 
-Here is finding 1.
+We see a large boom in the number of publications from 2015 to 2016, and once again from 2017 to 2018. 2024 was the year with the most publications, with 48 articles on the topic of Black male education, showing that more scholars are becoming aware of the problem and actively searching for reasons/solutions on the subject. 
 
-Here is finding 2.
+From the years of 2010 - 2024, the United States had the most articles regarding Black male educators' retention rates by a great margin, with 6193 total citations coming from the USA and 10 coming from Korea which is second.
 
-```{r, include=F, warning=F, messages=F}
-sentences <- read.csv("../data/sentences.csv")
+In these 14 years, 943 authors have written on Black male education. The most productive authors in my dataset has been Warren, Bristol, and Brooms. Of these articles, the keywords being Race, Black Males, and Urban Education. 
 
-yearly <- yearly_counts <- sentences %>%
-  group_by(Year) %>%
-  summarise(Count = n())
-```
-
-```{r, echo=F, warning=F, messages=F}
-ggplot(yearly_counts, aes(x = Year, y = Count)) +
-  geom_line(color = "blue") +
-  geom_point(color = "red") +
-  labs(title = "Trend of Sentences Over Time", x = "Year", y = "Count") +
-  theme_minimal()
-```
-
-Here is finding 3.
-
-Here is finding 4.
+We see a large boom in the number of publications from 2015 to 2016, and once again from 2017 to 2018. 2024 was the year with the most publications, with 48 articles on the topic of Black male education, showing that more scholars are becoming aware of the problem and actively searching for reasons/solutions on the subject. 
 
 # Discussion
 
