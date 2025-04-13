@@ -1,17 +1,20 @@
 ---
 title: "A Systematic Review of the Research Literature on Black Male Teachers"
-author: 
-  - "Jahmere Jackson"
-  - "Howard University"
+author:
+- Jahmere Jackson
+- Howard University
 output:
   html_document:
     toc: true
     toc_depth: 3
-    toc_float: true  # Enable floating TOC in the sidebar
+    toc_float: true
     number_sections: true
     theme: cerulean
     always_allow_html: true
     self_contained: true
+  pdf_document:
+    toc: true
+    toc_depth: '3'
 editor_options:
   chunk_output_type: console
   markdown:
