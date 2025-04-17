@@ -37,10 +37,27 @@ knitr::opts_chunk$set(echo = TRUE)
 #install.packages("pak")
 #install.packages("posterdown")
 pak::pak('rstudio/pagedown')
-library(readr)
 library(dplyr)
+library(readtext)
 library(tidyverse)
+library(gt)
 library(ggplot2)
+library(dplyr)
+library(knitr)
+library(readr)
+library(kableExtra)
+library(bibliometrix)
+library(tidyverse)
+library(DiagrammeR)
+library(DiagrammeRsvg)
+library(rsvg)
+library(quanteda)
+library(stringr)
+library(tidytext)
+library("quanteda.textmodels")
+library("quanteda.textstats")
+library("quanteda.textplots")
+require(quanteda.corpora)
 library(here)
 here::i_am("poster-template.Rmd")
 ```
@@ -64,32 +81,125 @@ By examining these patterns, this study aims to deepen the understanding of the 
 Black male educators express an oftentimes overwhelming amount of extra pedagogical responsibilities. This includes the expectation to play an extra role in a Black boy's upbringing in the Educational system then just a teacher. This can come in the form of a surrogate father or a disciplinary figure of some kind Rather than calling more Black male teachers due to their educational prowess, the call for Black men in the classroom directly correlates with the policy discussions addressing the school performances of Black boys. This is troublesome as it is assuming that all Black male educators are equipped with the proper tools / experiences to reach the "troubled" Black boys. 
 In a study done by Brokenbrough in 2009 shows that Black male educators are suseptable to anxiety surrounding the responsibilities of being a father figure to their students. Some of his participants even expressed their experience of Black boy students' resistance to their attempts to fill this role. 
 
-I am adding a citation @bohm2016deathquest.
-
-# Research Questions
-
 1. What is the intellectual and conceptual structure of research on retaining Black male educators in K-12 settings?
 
 2. Why are current Black male educators compelled to leave the field of education?
 
 # Methodology
 
-This is some sample text.
+```{r, echo=F, message=F, warning=F}
+# Create the framework
+tmp = DiagrammeR::grViz('digraph model {
 
-## Data
+    graph [layout = dot, overlap = true]
+    
+    node [shape=box]
+    {"Scoping"} -> {"Review"} -> {"Reduction"};
+ 
+    node [shape=box]
+    {"Keywords = TBD"} -> {"Sources = TDB"} -> docs;
+    
+    node [shape=box]
+    docs [label=<Documents, n = TBD>];
+    
+# `edge` statements
+ 
+    edge [minlen = 2]
+    docs -> {"Concepts" -> Themes}
 
-This is some more sample text.
+ }') 
 
-## Analytic framework
+# Display the graph
+tmp
 
-This is some more sample text.
+# Export to SVG
+tmp_svg = DiagrammeRsvg::export_svg(tmp)
+
+# Convert SVG to raw vector
+tmp_raw = charToRaw(tmp_svg)
+
+```
+
+```{r, include=F, message=F, warning=F}
+data <- readtext("savedrecs.txt") # Load the data
+D <- convert2df(file=data, dbsource= "wos", format= "plaintext")
+dim(D)
+```
+
+```{r, include=F, message=F, warning=F}
+# filter out the year to include only articles published 2010 - 2024
+D %>% 
+  filter(PY > 2009) %>% 
+  filter(PY < 2025) -> D
+```
+
+```{r, include=F, message=F, warning=F}
+# create an object of the study results
+results <- biblioAnalysis(D, sep = ";") # entire data set
+
+options(width=100)
+S <- summary(object = results, k = 10, pause = F)
+```
 
 # Findings
+
+The main information about the study data.
+
+```{r, echo=F, message=F, warning=F}
+kable(S[2])
+```
 
 We see a large boom in the number of publications from 2015 to 2016, and once again from 2017 to 2018. 2024 was the year with the most publications, with 48 articles on the topic of Black male education, showing that more scholars are becoming aware of the problem and actively searching for reasons/solutions on the subject. 
 From the years of 2010 - 2024, the United States had the most articles regarding Black male educators' retention rates by a great margin, with 6193 total citations coming from the USA and 10 coming from Korea which is second.
 In these 14 years, 943 authors have written on Black male education. The most productive authors in my dataset has been Warren, Bristol, and Brooms. Of these articles, the keywords being Race, Black Males, and Urban Education. 
 We see a large boom in the number of publications from 2015 to 2016, and once again from 2017 to 2018. 2024 was the year with the most publications, with 48 articles on the topic of Black male education, showing that more scholars are becoming aware of the problem and actively searching for reasons/solutions on the subject. 
+
+## Publications by Year
+
+```{r, include=F, message=F, warning=F}
+counts <- D %>%
+  group_by(PY) %>%
+  summarise(count = n())
+```
+
+```{r, include=F, message=F, warning=F}
+year_plot <- ggplot() + 
+  geom_col(data = counts, 
+           aes(x = PY, y = count), width = 0.4) +
+  theme_minimal() +
+  labs(x = "Year", y = "Count", 
+       title = "Publications over Time") +
+  scale_x_continuous(breaks = seq(min(counts$PY), max(counts$PY), by = 1)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        legend.title = element_blank(),
+        legend.position = "top") 
+print(year_plot)
+
+# Save the plot as a high-resolution PNG
+ggsave("img/year_plot.png", plot = year_plot, width = 10, height = 8, units = "in", dpi = 300, bg = "white")
+```
+
+![](img/year_plot.png){width=90%}
+
+## Main Sources
+
+```{r}
+#| results: show
+#| warning: false
+
+kable(S[9]) # Main sources (journals)
+
+```
+
+## Keywords
+
+```{r}
+#| results: show
+#| warning: false
+
+kable(S[10]) # Author Keywords and Keywords-Plus
+
+```
 
 # Discussion
 
