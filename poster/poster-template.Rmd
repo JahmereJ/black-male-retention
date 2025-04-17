@@ -56,7 +56,7 @@ We conduct a systematic review of the research literature on the retention of Bl
 # Introduction
 
 In today’s educational landscape, women significantly outnumber men, particularly in teaching positions. Among the most underrepresented groups in the field are Black men, who make up less than 2% of the educational workforce. This stark underrepresentation raises critical questions: Why are Black men increasingly hesitant to enter the teaching profession? What factors contribute to their premature departure from the classroom? And how can we better support and retain those who do choose to pursue a career in education?
-This qualitative study explores existing literature on the retention of Black male educators. The research reveals not only quantitative trends but also rich qualitative insights into the lived experiences of these men. Notably, studies highlight the disproportionate number of extra-pedagogical responsibilities placed on Black male teachers, often positioning them as disciplinarians or cultural role models beyond their teaching duties.
+This qualitative study explores existing literature on the retention of Black male educators. The research reveals not only quantitative trends but also rich qualitative insights into the lived experiences of these men. Notably, studies highlight the disproportionate number of extra-pedagogical responsibilities placed on Black male teachers, often positioning them as disciplinarians or father figures.
 By examining these patterns, this study aims to deepen the understanding of the current state of research on Black male educator retention and identify strategies to improve their recruitment, support, and longevity within the profession.
 
 # Literature Review
@@ -100,8 +100,6 @@ We see a large boom in the number of publications from 2015 to 2016, and once ag
 
 This is the discussion section [@alexander2021new].
 
-" In particular, there is little written about how Black men’s ways of knowing contribute to the development of a knowledge base on cultural teaching in urban schools" (M.Lynn, 2006, P.1).
-
 "Theres a much closer connection with a father. You go to your father for a lot of things that you're not gonna come to me about. And if you do, I will stop you immediately and say 'do you need to go to the counsellor?" (E.Brockenbrough, 2011, P.8)
 
 " Participants perceived that their peers and school administrators positioned them to serve primarily as disciplinarians first and teachers second" (T.Bristol, M.Mentor, 2018, P.1).
@@ -110,7 +108,7 @@ This is the discussion section [@alexander2021new].
 
 # Conclusion
 
-This is some concluding text.
+This systematic review highlights the urgent need to address the structural and cultural challenges impacting the retention of Black male educators in the United States. The research clearly shows that these educators are often burdened with additional roles that go beyond teaching—roles rooted in racial and gender specific expectations and deficit-based assumptions. These pressures, combined with systemic issues like low compensation, lack of representation, and inadequate support, contribute to their premature departure from the profession. However, the recent increase in scholarly attention suggests a growing awareness and commitment to finding solutions. Moving forward, fostering supportive work environments, implementing mentorship programs, and creating intentional professional development opportunities are key strategies for promoting the sustainability of Black male educators in our schools. Retaining these educators is not only a matter of equity, it is essential for building a more inclusive, effective, and representative educational system.
 
 # Acknowledgements
 
