@@ -191,14 +191,54 @@ kable(S[9]) # Main sources (journals)
 
 ```
 
-## Keywords
+## Most productive authors
 
 ```{r}
 #| results: show
 #| warning: false
 
+kable(S[5]) # Most productive authors
+
+```
+
+## Keywords
+
+```{r}
+#| results: show
+#| echo: false
+#| warning: false
+
 kable(S[10]) # Author Keywords and Keywords-Plus
 
+```
+
+## Most frequently cited documents
+
+```{r}
+#| results: show
+#| echo: false
+#| warning: false
+# Most frequently cited documents in the collection
+CR <- citations(D, field = "article", sep = ";")
+kable(cbind(CR$Cited[1:21]))
+```
+
+## Most productive countries
+
+```{r}
+#| results: show
+#| echo: false
+#| warning: false
+kable(S[7]) # Most productive countries
+
+```
+
+## Thematic Map and Frequency Analysis
+
+```{r, echo=F}
+Map1=thematicMap(D, field = "ID", n = 250, minfreq = 10,
+  stemming = FALSE, size = 0.4, n.labels=5, repel = TRUE)
+plot(Map1$map)
 ```
 
 # Discussion
