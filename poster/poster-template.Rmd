@@ -61,7 +61,8 @@ By examining these patterns, this study aims to deepen the understanding of the 
 
 # Literature Review
 
-This is some sample text.
+Black male educators express an oftentimes overwhelming amount of extra pedagogical responsibilities. This includes the expectation to play an extra role in a Black boy's upbringing in the Educational system then just a teacher. This can come in the form of a surrogate father or a disciplinary figure of some kind Rather than calling more Black male teachers due to their educational prowess, the call for Black men in the classroom directly correlates with the policy discussions addressing the school performances of Black boys. This is troublesome as it is assuming that all Black male educators are equipped with the proper tools / experiences to reach the "troubled" Black boys. 
+In a study done by Brokenbrough in 2009 shows that Black male educators are suseptable to anxiety surrounding the responsibilities of being a father figure to their students. Some of his participants even expressed their experience of Black boy students' resistance to their attempts to fill this role. 
 
 I am adding a citation @bohm2016deathquest.
 
@@ -99,7 +100,13 @@ We see a large boom in the number of publications from 2015 to 2016, and once ag
 
 This is the discussion section [@alexander2021new].
 
-This is the further discussion.
+" In particular, there is little written about how Black men’s ways of knowing contribute to the development of a knowledge base on cultural teaching in urban schools" (M.Lynn, 2006, P.1).
+
+"Theres a much closer connection with a father. You go to your father for a lot of things that you're not gonna come to me about. And if you do, I will stop you immediately and say 'do you need to go to the counsellor?" (E.Brockenbrough, 2011, P.8)
+
+" Participants perceived that their peers and school administrators positioned them to serve primarily as disciplinarians first and teachers second" (T.Bristol, M.Mentor, 2018, P.1).
+
+“The predominance of women authority figures in the lives of their Black students and the emotional and psychological resentment harbored by some Black students towards absent fathers” (E.Brockenbrough, 2011, P.8).
 
 # Conclusion
 
