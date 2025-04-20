@@ -10,7 +10,7 @@ affiliation:
     address: Department of Curriculum and Instruction, School of Education
   - num: 2
     address: Program in Applied Data Science and Analytics, The Graduate School
-column_numbers: 3
+column_numbers: 4
 logoright_name: img/qs-logo.png
 logoleft_name: img/hu-logo.jpg
 titlebox_borderwidth: "0.25cm"
@@ -68,18 +68,23 @@ pagedown::chrome_print("poster-template.Rmd")
 
 # Abstract
 
-We conduct a systematic review of the research literature on the retention of Black male educators in the United States. Our analysis uses computational methods to focus on the unique challenges Black male educators face and how a series of interconnected factors contribute to low retention rates in U.S. schools. Findings indicate that Black male educators often take on additional responsibilities beyond their standard teaching duties, such as being perceived primarily as disciplinarians and being expected to connect with "troubled" students due to a racialization process that reinforces deficit-based assumptions. Additional factors such as low wages, lack of representation, and feelings of being undervalued, significantly impact retention. This study seeks to establish a framework for understanding the state of the research literature on Black male educators and to identify strategies for improving retention, including mentorship, professional development opportunities, and supportive work environments. 
-
-# Introduction
-
-In today’s educational landscape, women significantly outnumber men, particularly in teaching positions. Among the most underrepresented groups in the field are Black men, who make up less than 2% of the educational workforce. This stark underrepresentation raises critical questions: Why are Black men increasingly hesitant to enter the teaching profession? What factors contribute to their premature departure from the classroom? And how can we better support and retain those who do choose to pursue a career in education?
-This qualitative study explores existing literature on the retention of Black male educators. The research reveals not only quantitative trends but also rich qualitative insights into the lived experiences of these men. Notably, studies highlight the disproportionate number of extra-pedagogical responsibilities placed on Black male teachers, often positioning them as disciplinarians or father figures.
-By examining these patterns, this study aims to deepen the understanding of the current state of research on Black male educator retention and identify strategies to improve their recruitment, support, and longevity within the profession.
+We conduct a systematic review of the research literature on the retention of Black male educators in the United States. Our analysis uses computational methods to focus on the unique challenges Black male educators face and how a series of interconnected factors contribute to low retention rates in U.S. schools. Findings indicate that Black male educators often take on additional responsibilities beyond their standard teaching duties, such as being perceived primarily as disciplinarians and being expected to connect with "troubled" students due to a racialization process that reinforces deficit-based assumptions. Additional factors such as low wages, lack of representation, and feelings of being undervalued, significantly impact retention. This qualitative study explores existing literature on the retention of Black male educators. The research reveals not only quantitative trends but also rich qualitative insights into the lived experiences of these men. This study also seeks to establish a framework for understanding the state of the research literature on Black male educators and to identify strategies for improving retention, including mentorship, professional development opportunities, and supportive work environments. This study aims to deepen the understanding of the current state of research on Black male educator retention and identify strategies to improve their recruitment, support, and longevity within the profession.
 
 # Literature Review
 
-Black male educators express an oftentimes overwhelming amount of extra pedagogical responsibilities. This includes the expectation to play an extra role in a Black boy's upbringing in the Educational system then just a teacher. This can come in the form of a surrogate father or a disciplinary figure of some kind Rather than calling more Black male teachers due to their educational prowess, the call for Black men in the classroom directly correlates with the policy discussions addressing the school performances of Black boys. This is troublesome as it is assuming that all Black male educators are equipped with the proper tools / experiences to reach the "troubled" Black boys. 
-In a study done by Brokenbrough in 2009 shows that Black male educators are suseptable to anxiety surrounding the responsibilities of being a father figure to their students. Some of his participants even expressed their experience of Black boy students' resistance to their attempts to fill this role. 
+  - Black male educators express an oftentimes overwhelming amount of extra pedagogical responsibilities. This includes the expectation to play an extra role in a Black boy's upbringing in the Educational system then just a teacher. This can come in the form of a surrogate father or a disciplinary figure of some kind.
+  - Rather than calling more Black male teachers due to their educational prowess, the call for Black men in the classroom directly correlates with the policy discussions addressing the school performances of Black boys. This is troublesome as it is assuming that all Black male educators are equipped with the proper tools / experiences to reach the "troubled" Black boys. 
+  - In a study done by Brokenbrough in 2009 shows that Black male educators are suseptable to anxiety surrounding the responsibilities of being a father figure to their students. Some of his participants even expressed their experience of Black boy students' resistance to their attempts to fill this role. 
+
+# Discussion  
+  
+  This is the discussion section [@alexander2021new].
+
+"Theres a much closer connection with a father. You go to your father for a lot of things that you're not gonna come to me about. And if you do, I will stop you immediately and say 'do you need to go to the counsellor?" (E.Brockenbrough, 2011, P.8)
+
+" Participants perceived that their peers and school administrators positioned them to serve primarily as disciplinarians first and teachers second" (T.Bristol, M.Mentor, 2018, P.1).
+
+“The predominance of women authority figures in the lives of their Black students and the emotional and psychological resentment harbored by some Black students towards absent fathers” (E.Brockenbrough, 2011, P.8).
 
 1. What is the intellectual and conceptual structure of research on retaining Black male educators in K-12 settings?
 
@@ -145,16 +150,10 @@ S <- summary(object = results, k = 10, pause = F)
 
 The main information about the study data.
 
-```{r, echo=F, message=F, warning=F}
-kable(S[2])
-```
-
-We see a large boom in the number of publications from 2015 to 2016, and once again from 2017 to 2018. 2024 was the year with the most publications, with 48 articles on the topic of Black male education, showing that more scholars are becoming aware of the problem and actively searching for reasons/solutions on the subject. 
-From the years of 2010 - 2024, the United States had the most articles regarding Black male educators' retention rates by a great margin, with 6193 total citations coming from the USA and 10 coming from Korea which is second.
-In these 14 years, 943 authors have written on Black male education. The most productive authors in my dataset has been Warren, Bristol, and Brooms. Of these articles, the keywords being Race, Black Males, and Urban Education. 
-We see a large boom in the number of publications from 2015 to 2016, and once again from 2017 to 2018. 2024 was the year with the most publications, with 48 articles on the topic of Black male education, showing that more scholars are becoming aware of the problem and actively searching for reasons/solutions on the subject. 
-
-## Publications by Year
+  - We see a large boom in the number of publications from 2015 to 2016, and once again from 2017 to 2018. 
+  - 2024 was the year with the most publications, with 48 articles on the topic of Black male education, showing that more scholars are becoming aware of the problem and actively searching for reasons/solutions on the subject. 
+  - From the years of 2010 - 2024, the United States had the most articles regarding Black male educators' retention rates by a great margin, with 6193 total citations coming from the USA and 10 coming from Korea which is second.
+  - In these 14 years, 943 authors have written on Black male education. The most productive authors in my dataset has been Warren, Bristol, and Brooms. Of these articles, the keywords being Race, Black Males, and Urban Education. 
 
 ```{r, include=F, message=F, warning=F}
 counts <- D %>%
@@ -176,30 +175,11 @@ year_plot <- ggplot() +
 print(year_plot)
 
 # Save the plot as a high-resolution PNG
-ggsave("img/year_plot.png", plot = year_plot, width = 10, height = 8, units = "in", dpi = 300, bg = "white")
+ggsave("img/year_plot.png", plot = year_plot, width = 8, height = 6, units = "in", dpi = 300, bg = "white")
 ```
 
 ![](img/year_plot.png){width=90%}
 
-## Main Sources
-
-```{r}
-#| results: show
-#| warning: false
-
-kable(S[9]) # Main sources (journals)
-
-```
-
-## Most productive authors
-
-```{r}
-#| results: show
-#| warning: false
-
-kable(S[5]) # Most productive authors
-
-```
 
 ## Keywords
 
@@ -212,45 +192,6 @@ kable(S[10]) # Author Keywords and Keywords-Plus
 
 ```
 
-## Most frequently cited documents
-
-```{r}
-#| results: show
-#| echo: false
-#| warning: false
-# Most frequently cited documents in the collection
-CR <- citations(D, field = "article", sep = ";")
-kable(cbind(CR$Cited[1:21]))
-```
-
-## Most productive countries
-
-```{r}
-#| results: show
-#| echo: false
-#| warning: false
-kable(S[7]) # Most productive countries
-
-```
-
-## Thematic Map and Frequency Analysis
-
-```{r, echo=F}
-Map1=thematicMap(D, field = "ID", n = 250, minfreq = 10,
-  stemming = FALSE, size = 0.4, n.labels=5, repel = TRUE)
-plot(Map1$map)
-```
-
-# Discussion
-
-This is the discussion section [@alexander2021new].
-
-"Theres a much closer connection with a father. You go to your father for a lot of things that you're not gonna come to me about. And if you do, I will stop you immediately and say 'do you need to go to the counsellor?" (E.Brockenbrough, 2011, P.8)
-
-" Participants perceived that their peers and school administrators positioned them to serve primarily as disciplinarians first and teachers second" (T.Bristol, M.Mentor, 2018, P.1).
-
-“The predominance of women authority figures in the lives of their Black students and the emotional and psychological resentment harbored by some Black students towards absent fathers” (E.Brockenbrough, 2011, P.8).
-
 # Conclusion
 
 This systematic review highlights the urgent need to address the structural and cultural challenges impacting the retention of Black male educators in the United States. The research clearly shows that these educators are often burdened with additional roles that go beyond teaching—roles rooted in racial and gender specific expectations and deficit-based assumptions. These pressures, combined with systemic issues like low compensation, lack of representation, and inadequate support, contribute to their premature departure from the profession. However, the recent increase in scholarly attention suggests a growing awareness and commitment to finding solutions. Moving forward, fostering supportive work environments, implementing mentorship programs, and creating intentional professional development opportunities are key strategies for promoting the sustainability of Black male educators in our schools. Retaining these educators is not only a matter of equity, it is essential for building a more inclusive, effective, and representative educational system.
@@ -260,3 +201,11 @@ This systematic review highlights the urgent need to address the structural and 
 These are the acknowledgements. This work was supporting by funding from the Alfred P. Sloan Foundation (Grant 2023-21062).
 
 # References
+
+Bristol, T. J., & Mentor, M. (2018). Policing and Teaching: The Positioning of Black Male Teachers as Agents in the Universal Carceral Apparatus. The Urban Review, 50(2), 218–234. https://doi.org/10.1007/s11256-018-0447-z
+
+Brockenbrough, E. (2012). “You ain’t my daddy!”: Black male teachers and the politics of surrogate fatherhood. International Journal of Inclusive Education, 16(4), 357–372. https://doi.org/10.1080/13603116.2011.555091
+
+LYNN, M. (2006). Education for the Community: Exploring the Culturally Relevant Practices of Black Male Teachers. Teachers College Record, 108(12), 2497–2522. https://doi.org/10.1111/j.1467-9620.2006.00792.x
+
+Pabon, A. J.-M. (2016). In hindsight and now again: black male teachers’ recollections on the suffering of black male youth in US public schools. Race Ethnicity and Education, 20(6), 766–780. https://doi.org/10.1080/13613324.2016.1195359
