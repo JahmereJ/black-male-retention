@@ -1,6 +1,7 @@
 ---
 title: "A Systematic Review of the Research Literature on Black Male Teachers"
 author:
+- Nathan Alexander
 - Jahmere Jackson
 - Howard University
 output:
